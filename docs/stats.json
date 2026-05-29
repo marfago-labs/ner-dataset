@@ -1,5 +1,6 @@
 {
-  "generated_at": "2026-05-29T16:16:56.345096+00:00",
+  "generated_at": "2026-05-29T16:22:54.038770+00:00",
+  "metrics_note": "Lexical diversity (distinct-1/2) matches ner-gold-generator build-gold stderr statistics. Gold integrity checks span anchoring on committed JSONL.",
   "datasets": [
     {
       "file": "arxiv_gold.jsonl",
@@ -23,6 +24,33 @@
       "engines": {},
       "document_types": {
         "arxiv": 10
+      },
+      "quality": {
+        "lexical_diversity": {
+          "distinct_1_per_doc": {
+            "mean": 0.6454,
+            "min": 0.5568,
+            "max": 0.75
+          },
+          "distinct_2_per_doc": {
+            "mean": 0.9352,
+            "min": 0.8939,
+            "max": 0.9756
+          },
+          "corpus": {
+            "distinct_1": 0.3781,
+            "distinct_2": 0.8593,
+            "token_count": 1756
+          }
+        },
+        "gold_integrity": {
+          "entities_checked": 40,
+          "span_match_rate": 1.0,
+          "unique_span_rate": 1.0,
+          "planned_surfaces_exactly_once_rate": null,
+          "planned_surfaces": 0,
+          "used_exactly_once": 0
+        }
       }
     },
     {
@@ -46,6 +74,33 @@
       },
       "document_types": {
         "blog_post": 100
+      },
+      "quality": {
+        "lexical_diversity": {
+          "distinct_1_per_doc": {
+            "mean": 0.9635,
+            "min": 0.95,
+            "max": 1.0
+          },
+          "distinct_2_per_doc": {
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "corpus": {
+            "distinct_1": 0.015,
+            "distinct_2": 0.068,
+            "token_count": 4147
+          }
+        },
+        "gold_integrity": {
+          "entities_checked": 500,
+          "span_match_rate": 1.0,
+          "unique_span_rate": 1.0,
+          "planned_surfaces_exactly_once_rate": 1.0,
+          "planned_surfaces": 500,
+          "used_exactly_once": 500
+        }
       }
     },
     {
@@ -74,6 +129,33 @@
         "news_article": 37,
         "transcript": 37,
         "blog_post": 26
+      },
+      "quality": {
+        "lexical_diversity": {
+          "distinct_1_per_doc": {
+            "mean": 0.9132,
+            "min": 0.831,
+            "max": 0.9773
+          },
+          "distinct_2_per_doc": {
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "corpus": {
+            "distinct_1": 0.0414,
+            "distinct_2": 0.163,
+            "token_count": 5511
+          }
+        },
+        "gold_integrity": {
+          "entities_checked": 500,
+          "span_match_rate": 1.0,
+          "unique_span_rate": 1.0,
+          "planned_surfaces_exactly_once_rate": 1.0,
+          "planned_surfaces": 500,
+          "used_exactly_once": 500
+        }
       }
     },
     {
@@ -98,6 +180,33 @@
       },
       "document_types": {
         "news_article": 100
+      },
+      "quality": {
+        "lexical_diversity": {
+          "distinct_1_per_doc": {
+            "mean": 0.9503,
+            "min": 0.92,
+            "max": 0.9615
+          },
+          "distinct_2_per_doc": {
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "corpus": {
+            "distinct_1": 0.0333,
+            "distinct_2": 0.1368,
+            "token_count": 4868
+          }
+        },
+        "gold_integrity": {
+          "entities_checked": 500,
+          "span_match_rate": 1.0,
+          "unique_span_rate": 1.0,
+          "planned_surfaces_exactly_once_rate": 1.0,
+          "planned_surfaces": 500,
+          "used_exactly_once": 500
+        }
       }
     },
     {
@@ -122,6 +231,33 @@
       },
       "document_types": {
         "scientific_abstract": 100
+      },
+      "quality": {
+        "lexical_diversity": {
+          "distinct_1_per_doc": {
+            "mean": 0.9209,
+            "min": 0.85,
+            "max": 0.9722
+          },
+          "distinct_2_per_doc": {
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "corpus": {
+            "distinct_1": 0.0295,
+            "distinct_2": 0.1316,
+            "token_count": 3800
+          }
+        },
+        "gold_integrity": {
+          "entities_checked": 500,
+          "span_match_rate": 1.0,
+          "unique_span_rate": 1.0,
+          "planned_surfaces_exactly_once_rate": 1.0,
+          "planned_surfaces": 500,
+          "used_exactly_once": 500
+        }
       }
     },
     {
@@ -145,6 +281,33 @@
       },
       "document_types": {
         "transcript": 100
+      },
+      "quality": {
+        "lexical_diversity": {
+          "distinct_1_per_doc": {
+            "mean": 0.8412,
+            "min": 0.8143,
+            "max": 0.8525
+          },
+          "distinct_2_per_doc": {
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "corpus": {
+            "distinct_1": 0.0254,
+            "distinct_2": 0.0855,
+            "token_count": 7020
+          }
+        },
+        "gold_integrity": {
+          "entities_checked": 500,
+          "span_match_rate": 1.0,
+          "unique_span_rate": 1.0,
+          "planned_surfaces_exactly_once_rate": 1.0,
+          "planned_surfaces": 500,
+          "used_exactly_once": 500
+        }
       }
     }
   ]

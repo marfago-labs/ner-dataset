@@ -13,7 +13,7 @@ Refresh the published stats page after changing JSONL files:
 
 ```bash
 python scripts/build_stats_page.py
-# → docs/index.html and docs/stats.json
+# → docs/index.html and docs/stats.json (includes lexical diversity + gold integrity)
 ```
 
 Regenerate procedural batches from `ner-gold-generator`:
