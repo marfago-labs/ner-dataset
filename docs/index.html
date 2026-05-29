@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>marfago-labs NER gold datasets — statistics</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --text: #e7ecf3;
+      --muted: #8b9cb3;
+      --accent: #3d8bfd;
+      --border: #2a3544;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    h1 { font-size: 1.75rem; font-weight: 600; margin: 0 0 0.5rem; }
+    .lead { color: var(--muted); margin: 0 0 2rem; }
+    .nav {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1rem;
+      margin-bottom: 2rem; font-size: 0.9rem;
+    }
+    .nav a { color: var(--accent); text-decoration: none; }
+    .nav a:hover { text-decoration: underline; }
+    .summary { width: 100%; border-collapse: collapse; margin-bottom: 2.5rem; font-size: 0.9rem; }
+    .summary th, .summary td { padding: 0.5rem 0.65rem; border-bottom: 1px solid var(--border); text-align: left; }
+    .summary th { color: var(--muted); font-weight: 500; }
+    .summary .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .summary tr.total td { border-top: 2px solid var(--border); }
+    .dataset {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .dataset h2 { margin: 0 0 0.25rem; font-size: 1.25rem; }
+    .dataset h3 { margin: 1.25rem 0 0.5rem; font-size: 1rem; color: var(--muted); }
+    .file code { font-size: 0.85rem; color: var(--muted); }
+    .meta { font-size: 0.9rem; color: var(--muted); margin: 0.35rem 0; }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    .kpi {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 0.65rem 0.75rem;
+      text-align: center;
+    }
+    .kpi .value { display: block; font-size: 1.15rem; font-weight: 600; }
+    .kpi .name { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
+    table.bars { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    table.bars th { text-align: left; color: var(--muted); font-weight: 500; padding: 0.35rem 0.5rem; }
+    table.bars td { padding: 0.35rem 0.5rem; vertical-align: middle; }
+    table.bars .num { text-align: right; font-variant-numeric: tabular-nums; }
+    table.bars .bar span {
+      display: block; height: 0.55rem; background: var(--accent);
+      border-radius: 3px; min-width: 2px;
+    }
+    .muted { color: var(--muted); }
+    footer { margin-top: 2rem; font-size: 0.85rem; color: var(--muted); }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>NER gold datasets</h1>
+    <p class="lead">
+      Character-offset gold JSONL for <a href="https://github.com/marfago-labs/ner-detector">ner-detector</a>
+      benchmarks. Built with
+      <a href="https://github.com/marfago-labs/ner-gold-generator">ner-gold-generator</a>.
+      Schema: <code>id</code>, <code>text</code>, <code>entities[]</code> with <code>start</code>/<code>end</code>.
+    </p>
+    <nav class="nav"><a href="#arxiv_gold">arxiv_gold</a> (10)
+<a href="#synthetic_blog_100">synthetic_blog_100</a> (100)
+<a href="#synthetic_mixed_100">synthetic_mixed_100</a> (100)
+<a href="#synthetic_news_100">synthetic_news_100</a> (100)
+<a href="#synthetic_scientific_100">synthetic_scientific_100</a> (100)
+<a href="#synthetic_transcript_100">synthetic_transcript_100</a> (100)</nav>
+    <h2 style="font-size:1.1rem;margin-bottom:0.75rem;">Overview</h2>
+    <table class="summary"><thead><tr><th>Dataset</th><th>Docs</th><th>Entities</th><th>Ent/doc</th><th>Min chars</th><th>Max chars</th><th>Avg chars</th><th>Labels</th></tr></thead><tbody><tr><td><a href="#arxiv_gold">arxiv_gold</a></td><td class="num">10</td><td class="num">40</td><td class="num">4.0</td><td class="num">686</td><td class="num">1,789</td><td class="num">1,135</td><td class="num">7</td></tr><tr><td><a href="#synthetic_blog_100">synthetic_blog_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">253</td><td class="num">302</td><td class="num">280</td><td class="num">4</td></tr><tr><td><a href="#synthetic_mixed_100">synthetic_mixed_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">260</td><td class="num">466</td><td class="num">364</td><td class="num">7</td></tr><tr><td><a href="#synthetic_news_100">synthetic_news_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">313</td><td class="num">365</td><td class="num">335</td><td class="num">5</td></tr><tr><td><a href="#synthetic_scientific_100">synthetic_scientific_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">200</td><td class="num">270</td><td class="num">236</td><td class="num">5</td></tr><tr><td><a href="#synthetic_transcript_100">synthetic_transcript_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">402</td><td class="num">469</td><td class="num">452</td><td class="num">4</td></tr><tr class="total"><td><strong>Total</strong></td><td class="num"><strong>510</strong></td><td class="num"><strong>2,540</strong></td><td colspan="5"></td></tr></tbody></table>
+    
+    <section class="dataset" id="arxiv_gold">
+      <h2>arxiv_gold</h2>
+      <p class="file"><code>datasets/arxiv_gold.jsonl</code></p>
+      <div class="kpis">
+        <div class="kpi"><span class="value">10</span><span class="name">Documents</span></div>
+        <div class="kpi"><span class="value">40</span><span class="name">Entities</span></div>
+        <div class="kpi"><span class="value">4.0</span><span class="name">Entities / doc (avg)</span></div>
+        <div class="kpi"><span class="value">686–1,789</span><span class="name">Chars / doc</span></div>
+        <div class="kpi"><span class="value">1,135</span><span class="name">Avg chars</span></div>
+        <div class="kpi"><span class="value">7</span><span class="name">Label types</span></div>
+      </div>
+      <p class="meta"><strong>Engine:</strong> manual</p>
+      <p class="meta"><strong>Document types:</strong> arxiv (10)</p>
+      <h3>Label distribution</h3>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">model</td><td class="num">11</td><td class="num">27.5%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">dataset</td><td class="num">10</td><td class="num">25.0%</td><td class="bar"><span style="width:90.9%"></span></td></tr><tr><td class="label">benchmark</td><td class="num">7</td><td class="num">17.5%</td><td class="bar"><span style="width:63.6%"></span></td></tr><tr><td class="label">number</td><td class="num">5</td><td class="num">12.5%</td><td class="bar"><span style="width:45.5%"></span></td></tr><tr><td class="label">method</td><td class="num">5</td><td class="num">12.5%</td><td class="bar"><span style="width:45.5%"></span></td></tr><tr><td class="label">metric</td><td class="num">1</td><td class="num">2.5%</td><td class="bar"><span style="width:9.1%"></span></td></tr><tr><td class="label">organization</td><td class="num">1</td><td class="num">2.5%</td><td class="bar"><span style="width:9.1%"></span></td></tr></tbody></table>
+    </section>
+    
+
+    <section class="dataset" id="synthetic_blog_100">
+      <h2>synthetic_blog_100</h2>
+      <p class="file"><code>datasets/synthetic_blog_100.jsonl</code></p>
+      <div class="kpis">
+        <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
+        <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
+        <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc (avg)</span></div>
+        <div class="kpi"><span class="value">253–302</span><span class="name">Chars / doc</span></div>
+        <div class="kpi"><span class="value">280</span><span class="name">Avg chars</span></div>
+        <div class="kpi"><span class="value">4</span><span class="name">Label types</span></div>
+      </div>
+      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
+      <p class="meta"><strong>Document types:</strong> blog_post (100)</p>
+      <h3>Label distribution</h3>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">method</td><td class="num">140</td><td class="num">28.0%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">person</td><td class="num">135</td><td class="num">27.0%</td><td class="bar"><span style="width:96.4%"></span></td></tr><tr><td class="label">organization</td><td class="num">129</td><td class="num">25.8%</td><td class="bar"><span style="width:92.1%"></span></td></tr><tr><td class="label">model</td><td class="num">96</td><td class="num">19.2%</td><td class="bar"><span style="width:68.6%"></span></td></tr></tbody></table>
+    </section>
+    
+
+    <section class="dataset" id="synthetic_mixed_100">
+      <h2>synthetic_mixed_100</h2>
+      <p class="file"><code>datasets/synthetic_mixed_100.jsonl</code></p>
+      <div class="kpis">
+        <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
+        <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
+        <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc (avg)</span></div>
+        <div class="kpi"><span class="value">260–466</span><span class="name">Chars / doc</span></div>
+        <div class="kpi"><span class="value">364</span><span class="name">Avg chars</span></div>
+        <div class="kpi"><span class="value">7</span><span class="name">Label types</span></div>
+      </div>
+      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
+      <p class="meta"><strong>Document types:</strong> news_article (37), transcript (37), blog_post (26)</p>
+      <h3>Label distribution</h3>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">person</td><td class="num">152</td><td class="num">30.4%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">organization</td><td class="num">116</td><td class="num">23.2%</td><td class="bar"><span style="width:76.3%"></span></td></tr><tr><td class="label">date</td><td class="num">81</td><td class="num">16.2%</td><td class="bar"><span style="width:53.3%"></span></td></tr><tr><td class="label">number</td><td class="num">59</td><td class="num">11.8%</td><td class="bar"><span style="width:38.8%"></span></td></tr><tr><td class="label">model</td><td class="num">33</td><td class="num">6.6%</td><td class="bar"><span style="width:21.7%"></span></td></tr><tr><td class="label">location</td><td class="num">31</td><td class="num">6.2%</td><td class="bar"><span style="width:20.4%"></span></td></tr><tr><td class="label">method</td><td class="num">28</td><td class="num">5.6%</td><td class="bar"><span style="width:18.4%"></span></td></tr></tbody></table>
+    </section>
+    
+
+    <section class="dataset" id="synthetic_news_100">
+      <h2>synthetic_news_100</h2>
+      <p class="file"><code>datasets/synthetic_news_100.jsonl</code></p>
+      <div class="kpis">
+        <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
+        <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
+        <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc (avg)</span></div>
+        <div class="kpi"><span class="value">313–365</span><span class="name">Chars / doc</span></div>
+        <div class="kpi"><span class="value">335</span><span class="name">Avg chars</span></div>
+        <div class="kpi"><span class="value">5</span><span class="name">Label types</span></div>
+      </div>
+      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
+      <p class="meta"><strong>Document types:</strong> news_article (100)</p>
+      <h3>Label distribution</h3>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">organization</td><td class="num">127</td><td class="num">25.4%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">person</td><td class="num">122</td><td class="num">24.4%</td><td class="bar"><span style="width:96.1%"></span></td></tr><tr><td class="label">location</td><td class="num">116</td><td class="num">23.2%</td><td class="bar"><span style="width:91.3%"></span></td></tr><tr><td class="label">date</td><td class="num">85</td><td class="num">17.0%</td><td class="bar"><span style="width:66.9%"></span></td></tr><tr><td class="label">number</td><td class="num">50</td><td class="num">10.0%</td><td class="bar"><span style="width:39.4%"></span></td></tr></tbody></table>
+    </section>
+    
+
+    <section class="dataset" id="synthetic_scientific_100">
+      <h2>synthetic_scientific_100</h2>
+      <p class="file"><code>datasets/synthetic_scientific_100.jsonl</code></p>
+      <div class="kpis">
+        <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
+        <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
+        <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc (avg)</span></div>
+        <div class="kpi"><span class="value">200–270</span><span class="name">Chars / doc</span></div>
+        <div class="kpi"><span class="value">236</span><span class="name">Avg chars</span></div>
+        <div class="kpi"><span class="value">5</span><span class="name">Label types</span></div>
+      </div>
+      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
+      <p class="meta"><strong>Document types:</strong> scientific_abstract (100)</p>
+      <h3>Label distribution</h3>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">model</td><td class="num">139</td><td class="num">27.8%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">metric</td><td class="num">112</td><td class="num">22.4%</td><td class="bar"><span style="width:80.6%"></span></td></tr><tr><td class="label">dataset</td><td class="num">100</td><td class="num">20.0%</td><td class="bar"><span style="width:71.9%"></span></td></tr><tr><td class="label">method</td><td class="num">79</td><td class="num">15.8%</td><td class="bar"><span style="width:56.8%"></span></td></tr><tr><td class="label">organization</td><td class="num">70</td><td class="num">14.0%</td><td class="bar"><span style="width:50.4%"></span></td></tr></tbody></table>
+    </section>
+    
+
+    <section class="dataset" id="synthetic_transcript_100">
+      <h2>synthetic_transcript_100</h2>
+      <p class="file"><code>datasets/synthetic_transcript_100.jsonl</code></p>
+      <div class="kpis">
+        <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
+        <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
+        <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc (avg)</span></div>
+        <div class="kpi"><span class="value">402–469</span><span class="name">Chars / doc</span></div>
+        <div class="kpi"><span class="value">452</span><span class="name">Avg chars</span></div>
+        <div class="kpi"><span class="value">4</span><span class="name">Label types</span></div>
+      </div>
+      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
+      <p class="meta"><strong>Document types:</strong> transcript (100)</p>
+      <h3>Label distribution</h3>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">person</td><td class="num">210</td><td class="num">42.0%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">organization</td><td class="num">124</td><td class="num">24.8%</td><td class="bar"><span style="width:59.0%"></span></td></tr><tr><td class="label">number</td><td class="num">86</td><td class="num">17.2%</td><td class="bar"><span style="width:41.0%"></span></td></tr><tr><td class="label">date</td><td class="num">80</td><td class="num">16.0%</td><td class="bar"><span style="width:38.1%"></span></td></tr></tbody></table>
+    </section>
+    
+    <footer>
+      Generated 2026-05-29 16:16 UTC by <code>scripts/build_stats_page.py</code>.
+      Machine-readable: <a href="stats.json">stats.json</a>.
+      Repository: <a href="https://github.com/marfago-labs/ner-dataset">github.com/marfago-labs/ner-dataset</a>.
+    </footer>
+  </div>
+</body>
+</html>

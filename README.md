@@ -2,6 +2,9 @@
 
 Gold **NER benchmark datasets** (JSONL with character-offset spans) produced by [ner-gold-generator](https://github.com/marfago-labs/ner-gold-generator) and consumed by [ner-detector](https://github.com/marfago-labs/ner-detector).
 
+**Dataset statistics (web):** after enabling GitHub Pages on this repo, open `docs/index.html` locally or visit  
+`https://marfago-labs.github.io/ner-dataset/` (Settings → Pages → source: **GitHub Actions**).
+
 ## Layout
 
 ```

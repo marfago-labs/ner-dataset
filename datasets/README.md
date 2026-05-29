@@ -9,6 +9,13 @@
 | `synthetic_scientific_100.jsonl` | 100 | procedural | Scientific-abstract profile (not the same as `arxiv_gold`) |
 | `synthetic_mixed_100.jsonl` | 100 | procedural | 40% news / 30% blog / 30% transcript |
 
+Refresh the published stats page after changing JSONL files:
+
+```bash
+python scripts/build_stats_page.py
+# → docs/index.html and docs/stats.json
+```
+
 Regenerate procedural batches from `ner-gold-generator`:
 
 ```bash

@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-05-29T16:16:56.345096+00:00",
+  "datasets": [
+    {
+      "file": "arxiv_gold.jsonl",
+      "documents": 10,
+      "entities": 40,
+      "avg_entities_per_doc": 4,
+      "text_length": {
+        "min": 686,
+        "max": 1789,
+        "avg": 1135
+      },
+      "labels": {
+        "model": 11,
+        "dataset": 10,
+        "benchmark": 7,
+        "number": 5,
+        "method": 5,
+        "metric": 1,
+        "organization": 1
+      },
+      "engines": {},
+      "document_types": {
+        "arxiv": 10
+      }
+    },
+    {
+      "file": "synthetic_blog_100.jsonl",
+      "documents": 100,
+      "entities": 500,
+      "avg_entities_per_doc": 5,
+      "text_length": {
+        "min": 253,
+        "max": 302,
+        "avg": 279.7
+      },
+      "labels": {
+        "method": 140,
+        "person": 135,
+        "organization": 129,
+        "model": 96
+      },
+      "engines": {
+        "procedural": 100
+      },
+      "document_types": {
+        "blog_post": 100
+      }
+    },
+    {
+      "file": "synthetic_mixed_100.jsonl",
+      "documents": 100,
+      "entities": 500,
+      "avg_entities_per_doc": 5,
+      "text_length": {
+        "min": 260,
+        "max": 466,
+        "avg": 364.0
+      },
+      "labels": {
+        "person": 152,
+        "organization": 116,
+        "date": 81,
+        "number": 59,
+        "model": 33,
+        "location": 31,
+        "method": 28
+      },
+      "engines": {
+        "procedural": 100
+      },
+      "document_types": {
+        "news_article": 37,
+        "transcript": 37,
+        "blog_post": 26
+      }
+    },
+    {
+      "file": "synthetic_news_100.jsonl",
+      "documents": 100,
+      "entities": 500,
+      "avg_entities_per_doc": 5,
+      "text_length": {
+        "min": 313,
+        "max": 365,
+        "avg": 335.3
+      },
+      "labels": {
+        "organization": 127,
+        "person": 122,
+        "location": 116,
+        "date": 85,
+        "number": 50
+      },
+      "engines": {
+        "procedural": 100
+      },
+      "document_types": {
+        "news_article": 100
+      }
+    },
+    {
+      "file": "synthetic_scientific_100.jsonl",
+      "documents": 100,
+      "entities": 500,
+      "avg_entities_per_doc": 5,
+      "text_length": {
+        "min": 200,
+        "max": 270,
+        "avg": 236.2
+      },
+      "labels": {
+        "model": 139,
+        "metric": 112,
+        "dataset": 100,
+        "method": 79,
+        "organization": 70
+      },
+      "engines": {
+        "procedural": 100
+      },
+      "document_types": {
+        "scientific_abstract": 100
+      }
+    },
+    {
+      "file": "synthetic_transcript_100.jsonl",
+      "documents": 100,
+      "entities": 500,
+      "avg_entities_per_doc": 5,
+      "text_length": {
+        "min": 402,
+        "max": 469,
+        "avg": 451.6
+      },
+      "labels": {
+        "person": 210,
+        "organization": 124,
+        "number": 86,
+        "date": 80
+      },
+      "engines": {
+        "procedural": 100
+      },
+      "document_types": {
+        "transcript": 100
+      }
+    }
+  ]
+}
