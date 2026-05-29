@@ -1,0 +1,4 @@
+# Local scratch (committed gold lives under datasets/)
+*.log
+.DS_Store
+Thumbs.db
