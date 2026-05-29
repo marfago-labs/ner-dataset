@@ -1,0 +1,12 @@
+# Procedural scientific-abstract batch (100 rows).
+# Distinct from curated arxiv_gold.jsonl (10 manual papers).
+
+seed: 104
+num_documents: 100
+engine: procedural
+document_type: scientific_abstract
+document_profiles_dir: ../../ner-gold-generator/configs/document_profiles
+
+entities_per_document:
+  distribution: fixed
+  fixed: 5

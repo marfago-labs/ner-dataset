@@ -6,11 +6,11 @@ Gold **NER benchmark datasets** (JSONL with character-offset spans) produced by 
 
 ```
 ner-dataset/
-  datasets/
-    arxiv_gold.jsonl       # built-in arXiv benchmark (manual spans)
-    synthetic_mixed.jsonl  # example synthetic batch output
-    …
+  datasets/           # gold JSONL (see datasets/README.md)
+  generate/           # procedural batch configs (100 rows each)
 ```
+
+**Included:** `arxiv_gold.jsonl` (10 curated papers) plus five **100-row** procedural corpora (`synthetic_news_100`, `synthetic_blog_100`, `synthetic_transcript_100`, `synthetic_scientific_100`, `synthetic_mixed_100`).
 
 ## Monorepo defaults
 

@@ -1,0 +1,11 @@
+# Procedural batch (100 rows).
+
+seed: 102
+num_documents: 100
+engine: procedural
+document_type: blog_post
+document_profiles_dir: ../../ner-gold-generator/configs/document_profiles
+
+entities_per_document:
+  distribution: fixed
+  fixed: 5

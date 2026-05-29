@@ -1,0 +1,17 @@
+# Procedural mixed-genre batch (100 rows).
+
+seed: 105
+num_documents: 100
+engine: procedural
+document_profiles_dir: ../../ner-gold-generator/configs/document_profiles
+document_types:
+  - type: news_article
+    weight: 0.4
+  - type: blog_post
+    weight: 0.3
+  - type: transcript
+    weight: 0.3
+
+entities_per_document:
+  distribution: fixed
+  fixed: 5

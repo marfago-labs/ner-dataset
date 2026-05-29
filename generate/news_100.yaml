@@ -1,0 +1,13 @@
+# Procedural batch for ner-dataset (100 rows). Run from ner-gold-generator:
+# uv run build-gold --source synthetic --synthetic-config ../ner-dataset/generate/news_100.yaml \
+#   --output ../ner-dataset/datasets/synthetic_news_100.jsonl
+
+seed: 101
+num_documents: 100
+engine: procedural
+document_type: news_article
+document_profiles_dir: ../../ner-gold-generator/configs/document_profiles
+
+entities_per_document:
+  distribution: fixed
+  fixed: 5
