@@ -1,11 +1,18 @@
-# Procedural batch (100 rows).
-
 seed: 102
 num_documents: 100
-engine: procedural
+engine: llm
 document_type: blog_post
 document_profiles_dir: ../../ner-gold-generator/configs/document_profiles
-
 entities_per_document:
   distribution: fixed
   fixed: 5
+llm:
+  model: openai/gpt-oss-120b:free
+  agent_mode: per_doc
+  provider_max_attempts: 3
+  validation_max_attempts: 8
+  max_restarts: 2
+  parallelism: 5
+  prompt_file: ../../ner-gold-generator/configs/prompts/synthetic_llm_system_prompt.txt
+  user_prompt_file: ../../ner-gold-generator/configs/prompts/synthetic_llm_user_prompt.txt
+  feedback_prompt_file: ../../ner-gold-generator/configs/prompts/synthetic_llm_feedback_prompt.txt

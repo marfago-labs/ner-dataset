@@ -1,17 +1,24 @@
-# Procedural mixed-genre batch (100 rows).
-
 seed: 105
 num_documents: 100
-engine: procedural
+engine: llm
 document_profiles_dir: ../../ner-gold-generator/configs/document_profiles
 document_types:
-  - type: news_article
-    weight: 0.4
-  - type: blog_post
-    weight: 0.3
-  - type: transcript
-    weight: 0.3
-
+- type: news_article
+  weight: 0.4
+- type: blog_post
+  weight: 0.3
+- type: transcript
+  weight: 0.3
 entities_per_document:
   distribution: fixed
   fixed: 5
+llm:
+  model: openai/gpt-oss-120b:free
+  agent_mode: per_doc
+  provider_max_attempts: 3
+  validation_max_attempts: 8
+  max_restarts: 2
+  parallelism: 5
+  prompt_file: ../../ner-gold-generator/configs/prompts/synthetic_llm_system_prompt.txt
+  user_prompt_file: ../../ner-gold-generator/configs/prompts/synthetic_llm_user_prompt.txt
+  feedback_prompt_file: ../../ner-gold-generator/configs/prompts/synthetic_llm_feedback_prompt.txt
