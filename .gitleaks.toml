@@ -1,0 +1,16 @@
+# Gitleaks config for ner-dataset (CI + pre-commit).
+# https://github.com/gitleaks/gitleaks
+
+title = "ner-dataset"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Dataset JSONL and docs (no credentials in this repo)"
+paths = [
+  '''(?:^|/)docs/''',
+  '''(?:^|/)datasets/''',
+  '''(?:^|/)generate/''',
+  '''(?:^|/)scripts/''',
+]

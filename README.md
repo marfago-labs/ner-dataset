@@ -29,6 +29,8 @@ marfago-labs/
 - **ner-gold-generator** writes here by default (`build-arxiv-gold`, `--output` examples).
 - **ner-detector** resolves `load_dataset("arxiv_gold")` from `datasets/` here first, then falls back to `ner-detector/benchmark/datasets/` for shipped copies.
 
+**Secret scanning:** Gitleaks in CI and pre-commit (`.gitleaks.toml`). No API keys belong in this repo.
+
 Override the directory with `NER_DATASET_DIR` in either project's `.env`.
 
 ## Generate gold
