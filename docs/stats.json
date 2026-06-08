@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-29T16:22:54.038770+00:00",
+  "generated_at": "2026-06-08T07:52:03.481064+00:00",
   "metrics_note": "Lexical diversity (distinct-1/2) matches ner-gold-generator build-gold stderr statistics. Gold integrity checks span anchoring on committed JSONL.",
   "datasets": [
     {
       "file": "arxiv_gold.jsonl",
       "documents": 10,
-      "entities": 40,
-      "avg_entities_per_doc": 4,
+      "entities": 41,
+      "avg_entities_per_doc": 4.1,
       "text_length": {
         "min": 686,
         "max": 1789,
@@ -14,10 +14,10 @@
       },
       "labels": {
         "model": 11,
-        "dataset": 10,
-        "benchmark": 7,
+        "benchmark": 9,
+        "dataset": 8,
+        "method": 6,
         "number": 5,
-        "method": 5,
         "metric": 1,
         "organization": 1
       },
@@ -44,9 +44,9 @@
           }
         },
         "gold_integrity": {
-          "entities_checked": 40,
+          "entities_checked": 41,
           "span_match_rate": 1.0,
-          "unique_span_rate": 1.0,
+          "unique_span_rate": 0.780488,
           "planned_surfaces_exactly_once_rate": null,
           "planned_surfaces": 0,
           "used_exactly_once": 0
@@ -59,18 +59,18 @@
       "entities": 500,
       "avg_entities_per_doc": 5,
       "text_length": {
-        "min": 253,
-        "max": 302,
-        "avg": 279.7
+        "min": 336,
+        "max": 902,
+        "avg": 595.9
       },
       "labels": {
-        "method": 140,
-        "person": 135,
-        "organization": 129,
-        "model": 96
+        "method": 141,
+        "person": 138,
+        "organization": 127,
+        "model": 94
       },
       "engines": {
-        "procedural": 100
+        "llm": 100
       },
       "document_types": {
         "blog_post": 100
@@ -78,19 +78,19 @@
       "quality": {
         "lexical_diversity": {
           "distinct_1_per_doc": {
-            "mean": 0.9635,
-            "min": 0.95,
-            "max": 1.0
+            "mean": 0.7772,
+            "min": 0.6929,
+            "max": 0.9091
           },
           "distinct_2_per_doc": {
-            "mean": 1.0,
-            "min": 1.0,
+            "mean": 0.9909,
+            "min": 0.9667,
             "max": 1.0
           },
           "corpus": {
-            "distinct_1": 0.015,
-            "distinct_2": 0.068,
-            "token_count": 4147
+            "distinct_1": 0.1314,
+            "distinct_2": 0.4902,
+            "token_count": 10894
           }
         },
         "gold_integrity": {
@@ -109,21 +109,21 @@
       "entities": 500,
       "avg_entities_per_doc": 5,
       "text_length": {
-        "min": 260,
-        "max": 466,
-        "avg": 364.0
+        "min": 322,
+        "max": 1402,
+        "avg": 745.7
       },
       "labels": {
-        "person": 152,
-        "organization": 116,
-        "date": 81,
-        "number": 59,
+        "person": 156,
+        "organization": 117,
+        "date": 77,
+        "number": 58,
         "model": 33,
         "location": 31,
         "method": 28
       },
       "engines": {
-        "procedural": 100
+        "llm": 100
       },
       "document_types": {
         "news_article": 37,
@@ -133,19 +133,19 @@
       "quality": {
         "lexical_diversity": {
           "distinct_1_per_doc": {
-            "mean": 0.9132,
-            "min": 0.831,
-            "max": 0.9773
+            "mean": 0.7875,
+            "min": 0.6652,
+            "max": 0.9344
           },
           "distinct_2_per_doc": {
-            "mean": 1.0,
-            "min": 1.0,
+            "mean": 0.9898,
+            "min": 0.9593,
             "max": 1.0
           },
           "corpus": {
-            "distinct_1": 0.0414,
-            "distinct_2": 0.163,
-            "token_count": 5511
+            "distinct_1": 0.1957,
+            "distinct_2": 0.657,
+            "token_count": 12223
           }
         },
         "gold_integrity": {
@@ -164,9 +164,9 @@
       "entities": 500,
       "avg_entities_per_doc": 5,
       "text_length": {
-        "min": 313,
-        "max": 365,
-        "avg": 335.3
+        "min": 357,
+        "max": 957,
+        "avg": 552.9
       },
       "labels": {
         "organization": 127,
@@ -176,7 +176,7 @@
         "number": 50
       },
       "engines": {
-        "procedural": 100
+        "llm": 100
       },
       "document_types": {
         "news_article": 100
@@ -184,19 +184,19 @@
       "quality": {
         "lexical_diversity": {
           "distinct_1_per_doc": {
-            "mean": 0.9503,
-            "min": 0.92,
-            "max": 0.9615
+            "mean": 0.8407,
+            "min": 0.7447,
+            "max": 0.9242
           },
           "distinct_2_per_doc": {
-            "mean": 1.0,
-            "min": 1.0,
+            "mean": 0.9964,
+            "min": 0.9634,
             "max": 1.0
           },
           "corpus": {
-            "distinct_1": 0.0333,
-            "distinct_2": 0.1368,
-            "token_count": 4868
+            "distinct_1": 0.208,
+            "distinct_2": 0.6614,
+            "token_count": 8418
           }
         },
         "gold_integrity": {
@@ -211,52 +211,52 @@
     },
     {
       "file": "synthetic_scientific_100.jsonl",
-      "documents": 100,
-      "entities": 500,
+      "documents": 99,
+      "entities": 495,
       "avg_entities_per_doc": 5,
       "text_length": {
-        "min": 200,
-        "max": 270,
-        "avg": 236.2
+        "min": 327,
+        "max": 694,
+        "avg": 505.3
       },
       "labels": {
-        "model": 139,
-        "metric": 112,
-        "dataset": 100,
-        "method": 79,
-        "organization": 70
+        "model": 124,
+        "metric": 121,
+        "dataset": 105,
+        "method": 73,
+        "organization": 72
       },
       "engines": {
-        "procedural": 100
+        "llm": 99
       },
       "document_types": {
-        "scientific_abstract": 100
+        "scientific_abstract": 99
       },
       "quality": {
         "lexical_diversity": {
           "distinct_1_per_doc": {
-            "mean": 0.9209,
-            "min": 0.85,
-            "max": 0.9722
+            "mean": 0.8772,
+            "min": 0.7531,
+            "max": 0.9636
           },
           "distinct_2_per_doc": {
-            "mean": 1.0,
-            "min": 1.0,
+            "mean": 0.9958,
+            "min": 0.9444,
             "max": 1.0
           },
           "corpus": {
-            "distinct_1": 0.0295,
-            "distinct_2": 0.1316,
-            "token_count": 3800
+            "distinct_1": 0.1287,
+            "distinct_2": 0.5165,
+            "token_count": 6932
           }
         },
         "gold_integrity": {
-          "entities_checked": 500,
+          "entities_checked": 495,
           "span_match_rate": 1.0,
           "unique_span_rate": 1.0,
           "planned_surfaces_exactly_once_rate": 1.0,
-          "planned_surfaces": 500,
-          "used_exactly_once": 500
+          "planned_surfaces": 495,
+          "used_exactly_once": 495
         }
       }
     },
@@ -266,18 +266,18 @@
       "entities": 500,
       "avg_entities_per_doc": 5,
       "text_length": {
-        "min": 402,
-        "max": 469,
-        "avg": 451.6
+        "min": 703,
+        "max": 1442,
+        "avg": 1119.4
       },
       "labels": {
-        "person": 210,
-        "organization": 124,
+        "person": 211,
+        "organization": 121,
         "number": 86,
-        "date": 80
+        "date": 82
       },
       "engines": {
-        "procedural": 100
+        "llm": 100
       },
       "document_types": {
         "transcript": 100
@@ -285,19 +285,19 @@
       "quality": {
         "lexical_diversity": {
           "distinct_1_per_doc": {
-            "mean": 0.8412,
-            "min": 0.8143,
-            "max": 0.8525
+            "mean": 0.7265,
+            "min": 0.6619,
+            "max": 0.8763
           },
           "distinct_2_per_doc": {
-            "mean": 1.0,
-            "min": 1.0,
+            "mean": 0.9833,
+            "min": 0.9522,
             "max": 1.0
           },
           "corpus": {
-            "distinct_1": 0.0254,
-            "distinct_2": 0.0855,
-            "token_count": 7020
+            "distinct_1": 0.1218,
+            "distinct_2": 0.5017,
+            "token_count": 18345
           }
         },
         "gold_integrity": {

@@ -1,0 +1,23 @@
+# ner-dataset — NER benchmark gold artifacts (marfago-labs)
+
+> Committed JSONL datasets + published integrity statistics.
+
+## Start here
+
+- README.md — layout, reproduce/cite, monorepo wiring
+- datasets/README.md — file inventory (engines, regen commands)
+- docs/for-agents.md — artifact repo notes for coding agents
+
+## Machine-readable stats
+
+- docs/stats.json — document/entity counts, engines, gold_integrity
+- docs/index.html — GitHub Pages dashboard (marfago-labs.github.io/ner-dataset)
+
+## Regenerate
+
+Use ner-gold-generator with configs in generate/*.yaml — see datasets/README.md.
+
+## Sibling repos
+
+- https://github.com/marfago-labs/ner-gold-generator — builds gold (llms.txt)
+- https://github.com/marfago-labs/ner-detector — evaluates gold (llms.txt)

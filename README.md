@@ -9,10 +9,16 @@ Gold **NER benchmark datasets** (JSONL with character-offset spans) produced by 
 ```
 ner-dataset/
   datasets/           # gold JSONL (see datasets/README.md)
-  generate/           # procedural batch configs (100 rows each)
+  generate/           # regen YAML configs (100 rows each; engine: llm)
 ```
 
-**Included:** `arxiv_gold.jsonl` (10 curated papers) plus five **100-row** procedural corpora (`synthetic_news_100`, `synthetic_blog_100`, `synthetic_transcript_100`, `synthetic_scientific_100`, `synthetic_mixed_100`).
+**Included:** `arxiv_gold.jsonl` (10 curated papers) plus five **100-row LLM-generated** synthetic corpora (`synthetic_news_100`, `synthetic_blog_100`, `synthetic_transcript_100`, `synthetic_scientific_100`, `synthetic_mixed_100`).
+
+## Reproduce / cite
+
+- **Release:** Git tag [`v1.0.0`](https://github.com/marfago-labs/ner-dataset/releases/tag/v1.0.0) — canonical benchmark snapshot (arxiv + five LLM synthetics).
+- **Regenerate:** [ner-gold-generator](https://github.com/marfago-labs/ner-gold-generator) with configs in `generate/` (see [datasets/README.md](datasets/README.md)).
+- **Evaluate:** [ner-detector](https://github.com/marfago-labs/ner-detector) `load_dataset("<name>")` or `benchmark/run_benchmark.py`.
 
 ## Monorepo defaults
 
@@ -27,7 +33,7 @@ marfago-labs/
 ```
 
 - **ner-gold-generator** writes here by default (`build-arxiv-gold`, `--output` examples).
-- **ner-detector** resolves `load_dataset("arxiv_gold")` from `datasets/` here first, then falls back to `ner-detector/benchmark/datasets/` for shipped copies.
+- **ner-detector** resolves `load_dataset("arxiv_gold")` from `datasets/` here first, then falls back to `NER_DATASET_DIR` or sibling paths.
 
 **Secret scanning:** Gitleaks in CI and pre-commit (`.gitleaks.toml`). No API keys belong in this repo.
 
@@ -47,6 +53,8 @@ uv run build-gold --source synthetic \
 ```
 
 Schema: see [ner-gold-generator docs/gold-schema.md](https://github.com/marfago-labs/ner-gold-generator/blob/master/docs/gold-schema.md).
+
+**Coding agents:** [docs/for-agents.md](docs/for-agents.md) · [llms.txt](llms.txt)
 
 ## License
 

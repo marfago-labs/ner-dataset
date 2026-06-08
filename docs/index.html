@@ -86,24 +86,23 @@
       <a href="https://github.com/marfago-labs/ner-gold-generator">ner-gold-generator</a>.
       Includes <strong>lexical diversity</strong> (distinct-1/2) and <strong>gold integrity</strong>
       (span match, unique surfaces) — same family of metrics as <code>build-gold</code> stderr stats.
-      Gold integrity indicates whether entities are correctly anchored in text; lexical diversity helps detect repetitive synthetic wording.
     </p>
     <nav class="nav"><a href="#arxiv_gold">arxiv_gold</a> (10)
 <a href="#synthetic_blog_100">synthetic_blog_100</a> (100)
 <a href="#synthetic_mixed_100">synthetic_mixed_100</a> (100)
 <a href="#synthetic_news_100">synthetic_news_100</a> (100)
-<a href="#synthetic_scientific_100">synthetic_scientific_100</a> (100)
+<a href="#synthetic_scientific_100">synthetic_scientific_100</a> (99)
 <a href="#synthetic_transcript_100">synthetic_transcript_100</a> (100)</nav>
     <h2 style="font-size:1.1rem;margin-bottom:0.75rem;">Overview</h2>
-    <table class="summary"><thead><tr><th>Dataset</th><th>Docs</th><th>Entities</th><th>Ent/doc</th><th>Distinct-1</th><th>Distinct-2</th><th>Span match</th><th>Labels</th></tr></thead><tbody><tr><td><a href="#arxiv_gold">arxiv_gold</a></td><td class="num">10</td><td class="num">40</td><td class="num">4.0</td><td class="num">0.645</td><td class="num">0.935</td><td class="num">100.0%</td><td class="num">7</td></tr><tr><td><a href="#synthetic_blog_100">synthetic_blog_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">0.963</td><td class="num">1.000</td><td class="num">100.0%</td><td class="num">4</td></tr><tr><td><a href="#synthetic_mixed_100">synthetic_mixed_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">0.913</td><td class="num">1.000</td><td class="num">100.0%</td><td class="num">7</td></tr><tr><td><a href="#synthetic_news_100">synthetic_news_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">0.950</td><td class="num">1.000</td><td class="num">100.0%</td><td class="num">5</td></tr><tr><td><a href="#synthetic_scientific_100">synthetic_scientific_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">0.921</td><td class="num">1.000</td><td class="num">100.0%</td><td class="num">5</td></tr><tr><td><a href="#synthetic_transcript_100">synthetic_transcript_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">0.841</td><td class="num">1.000</td><td class="num">100.0%</td><td class="num">4</td></tr><tr class="total"><td><strong>Total</strong></td><td class="num"><strong>510</strong></td><td class="num"><strong>2,540</strong></td><td colspan="5"></td></tr></tbody></table>
-    
+    <table class="summary"><thead><tr><th>Dataset</th><th>Docs</th><th>Entities</th><th>Ent/doc</th><th>Distinct-1</th><th>Distinct-2</th><th>Span match</th><th>Labels</th></tr></thead><tbody><tr><td><a href="#arxiv_gold">arxiv_gold</a></td><td class="num">10</td><td class="num">41</td><td class="num">4.1</td><td class="num">0.645</td><td class="num">0.935</td><td class="num">100.0%</td><td class="num">7</td></tr><tr><td><a href="#synthetic_blog_100">synthetic_blog_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">0.777</td><td class="num">0.991</td><td class="num">100.0%</td><td class="num">4</td></tr><tr><td><a href="#synthetic_mixed_100">synthetic_mixed_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">0.788</td><td class="num">0.990</td><td class="num">100.0%</td><td class="num">7</td></tr><tr><td><a href="#synthetic_news_100">synthetic_news_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">0.841</td><td class="num">0.996</td><td class="num">100.0%</td><td class="num">5</td></tr><tr><td><a href="#synthetic_scientific_100">synthetic_scientific_100</a></td><td class="num">99</td><td class="num">495</td><td class="num">5.0</td><td class="num">0.877</td><td class="num">0.996</td><td class="num">100.0%</td><td class="num">5</td></tr><tr><td><a href="#synthetic_transcript_100">synthetic_transcript_100</a></td><td class="num">100</td><td class="num">500</td><td class="num">5.0</td><td class="num">0.727</td><td class="num">0.983</td><td class="num">100.0%</td><td class="num">4</td></tr><tr class="total"><td><strong>Total</strong></td><td class="num"><strong>509</strong></td><td class="num"><strong>2,536</strong></td><td colspan="5"></td></tr></tbody></table>
+
     <section class="dataset" id="arxiv_gold">
       <h2>arxiv_gold</h2>
       <p class="file"><code>datasets/arxiv_gold.jsonl</code></p>
       <div class="kpis">
         <div class="kpi"><span class="value">10</span><span class="name">Documents</span></div>
-        <div class="kpi"><span class="value">40</span><span class="name">Entities</span></div>
-        <div class="kpi"><span class="value">4.0</span><span class="name">Entities / doc</span></div>
+        <div class="kpi"><span class="value">41</span><span class="name">Entities</span></div>
+        <div class="kpi"><span class="value">4.1</span><span class="name">Entities / doc</span></div>
         <div class="kpi"><span class="value">0.645</span><span class="name">Distinct-1 (mean)</span></div>
         <div class="kpi"><span class="value">0.935</span><span class="name">Distinct-2 (mean)</span></div>
         <div class="kpi"><span class="value">100.0%</span><span class="name">Span match</span></div>
@@ -118,14 +117,14 @@
 <tr><td>Distinct-1 (corpus)</td><td class="num">0.378</td><td>1,756 tokens</td></tr>
 <tr><td>Distinct-2 (corpus)</td><td class="num">0.859</td><td>unique bigrams / all bigrams</td></tr>
 <tr><td>Span match rate</td><td class="num">100.0%</td><td>text[start:end] == entity.text</td></tr>
-<tr><td>Unique surface rate</td><td class="num">100.0%</td><td>each gold surface appears once in text</td></tr>
+<tr><td>Unique surface rate</td><td class="num">78.0%</td><td>each gold surface appears once in text</td></tr>
 <tr><td>Planned surface exactly-once</td><td class="num">—</td><td>manual / non-synthetic rows</td></tr>
 </tbody></table>
 <p class="muted quality-note">Lexical diversity matches <code>ner-gold-generator</code> build statistics (report-only, not a gate). Higher distinct-1/2 usually means less repetitive wording.</p>
       <h3>Label distribution</h3>
-      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">model</td><td class="num">11</td><td class="num">27.5%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">dataset</td><td class="num">10</td><td class="num">25.0%</td><td class="bar"><span style="width:90.9%"></span></td></tr><tr><td class="label">benchmark</td><td class="num">7</td><td class="num">17.5%</td><td class="bar"><span style="width:63.6%"></span></td></tr><tr><td class="label">number</td><td class="num">5</td><td class="num">12.5%</td><td class="bar"><span style="width:45.5%"></span></td></tr><tr><td class="label">method</td><td class="num">5</td><td class="num">12.5%</td><td class="bar"><span style="width:45.5%"></span></td></tr><tr><td class="label">metric</td><td class="num">1</td><td class="num">2.5%</td><td class="bar"><span style="width:9.1%"></span></td></tr><tr><td class="label">organization</td><td class="num">1</td><td class="num">2.5%</td><td class="bar"><span style="width:9.1%"></span></td></tr></tbody></table>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">model</td><td class="num">11</td><td class="num">26.8%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">benchmark</td><td class="num">9</td><td class="num">22.0%</td><td class="bar"><span style="width:81.8%"></span></td></tr><tr><td class="label">dataset</td><td class="num">8</td><td class="num">19.5%</td><td class="bar"><span style="width:72.7%"></span></td></tr><tr><td class="label">method</td><td class="num">6</td><td class="num">14.6%</td><td class="bar"><span style="width:54.5%"></span></td></tr><tr><td class="label">number</td><td class="num">5</td><td class="num">12.2%</td><td class="bar"><span style="width:45.5%"></span></td></tr><tr><td class="label">metric</td><td class="num">1</td><td class="num">2.4%</td><td class="bar"><span style="width:9.1%"></span></td></tr><tr><td class="label">organization</td><td class="num">1</td><td class="num">2.4%</td><td class="bar"><span style="width:9.1%"></span></td></tr></tbody></table>
     </section>
-    
+
 
     <section class="dataset" id="synthetic_blog_100">
       <h2>synthetic_blog_100</h2>
@@ -134,28 +133,28 @@
         <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
         <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
         <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc</span></div>
-        <div class="kpi"><span class="value">0.963</span><span class="name">Distinct-1 (mean)</span></div>
-        <div class="kpi"><span class="value">1.000</span><span class="name">Distinct-2 (mean)</span></div>
+        <div class="kpi"><span class="value">0.777</span><span class="name">Distinct-1 (mean)</span></div>
+        <div class="kpi"><span class="value">0.991</span><span class="name">Distinct-2 (mean)</span></div>
         <div class="kpi"><span class="value">100.0%</span><span class="name">Span match</span></div>
       </div>
-      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
+      <p class="meta"><strong>Engine:</strong> llm (100)</p>
       <p class="meta"><strong>Document types:</strong> blog_post (100)</p>
       <h3>NLP quality metrics</h3>
 <table class="quality">
 <thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead><tbody>
-<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.963</td><td>min 0.950, max 1.000</td></tr>
-<tr><td>Distinct-2 (per doc, mean)</td><td class="num">1.000</td><td>min 1.000, max 1.000</td></tr>
-<tr><td>Distinct-1 (corpus)</td><td class="num">0.015</td><td>4,147 tokens</td></tr>
-<tr><td>Distinct-2 (corpus)</td><td class="num">0.068</td><td>unique bigrams / all bigrams</td></tr>
+<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.777</td><td>min 0.693, max 0.909</td></tr>
+<tr><td>Distinct-2 (per doc, mean)</td><td class="num">0.991</td><td>min 0.967, max 1.000</td></tr>
+<tr><td>Distinct-1 (corpus)</td><td class="num">0.131</td><td>10,894 tokens</td></tr>
+<tr><td>Distinct-2 (corpus)</td><td class="num">0.490</td><td>unique bigrams / all bigrams</td></tr>
 <tr><td>Span match rate</td><td class="num">100.0%</td><td>text[start:end] == entity.text</td></tr>
 <tr><td>Unique surface rate</td><td class="num">100.0%</td><td>each gold surface appears once in text</td></tr>
 <tr><td>Planned surface exactly-once</td><td class="num">100.0%</td><td>500/500 from synthetic_meta</td></tr>
 </tbody></table>
 <p class="muted quality-note">Lexical diversity matches <code>ner-gold-generator</code> build statistics (report-only, not a gate). Higher distinct-1/2 usually means less repetitive wording.</p>
       <h3>Label distribution</h3>
-      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">method</td><td class="num">140</td><td class="num">28.0%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">person</td><td class="num">135</td><td class="num">27.0%</td><td class="bar"><span style="width:96.4%"></span></td></tr><tr><td class="label">organization</td><td class="num">129</td><td class="num">25.8%</td><td class="bar"><span style="width:92.1%"></span></td></tr><tr><td class="label">model</td><td class="num">96</td><td class="num">19.2%</td><td class="bar"><span style="width:68.6%"></span></td></tr></tbody></table>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">method</td><td class="num">141</td><td class="num">28.2%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">person</td><td class="num">138</td><td class="num">27.6%</td><td class="bar"><span style="width:97.9%"></span></td></tr><tr><td class="label">organization</td><td class="num">127</td><td class="num">25.4%</td><td class="bar"><span style="width:90.1%"></span></td></tr><tr><td class="label">model</td><td class="num">94</td><td class="num">18.8%</td><td class="bar"><span style="width:66.7%"></span></td></tr></tbody></table>
     </section>
-    
+
 
     <section class="dataset" id="synthetic_mixed_100">
       <h2>synthetic_mixed_100</h2>
@@ -164,28 +163,28 @@
         <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
         <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
         <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc</span></div>
-        <div class="kpi"><span class="value">0.913</span><span class="name">Distinct-1 (mean)</span></div>
-        <div class="kpi"><span class="value">1.000</span><span class="name">Distinct-2 (mean)</span></div>
+        <div class="kpi"><span class="value">0.788</span><span class="name">Distinct-1 (mean)</span></div>
+        <div class="kpi"><span class="value">0.990</span><span class="name">Distinct-2 (mean)</span></div>
         <div class="kpi"><span class="value">100.0%</span><span class="name">Span match</span></div>
       </div>
-      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
+      <p class="meta"><strong>Engine:</strong> llm (100)</p>
       <p class="meta"><strong>Document types:</strong> news_article (37), transcript (37), blog_post (26)</p>
       <h3>NLP quality metrics</h3>
 <table class="quality">
 <thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead><tbody>
-<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.913</td><td>min 0.831, max 0.977</td></tr>
-<tr><td>Distinct-2 (per doc, mean)</td><td class="num">1.000</td><td>min 1.000, max 1.000</td></tr>
-<tr><td>Distinct-1 (corpus)</td><td class="num">0.041</td><td>5,511 tokens</td></tr>
-<tr><td>Distinct-2 (corpus)</td><td class="num">0.163</td><td>unique bigrams / all bigrams</td></tr>
+<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.788</td><td>min 0.665, max 0.934</td></tr>
+<tr><td>Distinct-2 (per doc, mean)</td><td class="num">0.990</td><td>min 0.959, max 1.000</td></tr>
+<tr><td>Distinct-1 (corpus)</td><td class="num">0.196</td><td>12,223 tokens</td></tr>
+<tr><td>Distinct-2 (corpus)</td><td class="num">0.657</td><td>unique bigrams / all bigrams</td></tr>
 <tr><td>Span match rate</td><td class="num">100.0%</td><td>text[start:end] == entity.text</td></tr>
 <tr><td>Unique surface rate</td><td class="num">100.0%</td><td>each gold surface appears once in text</td></tr>
 <tr><td>Planned surface exactly-once</td><td class="num">100.0%</td><td>500/500 from synthetic_meta</td></tr>
 </tbody></table>
 <p class="muted quality-note">Lexical diversity matches <code>ner-gold-generator</code> build statistics (report-only, not a gate). Higher distinct-1/2 usually means less repetitive wording.</p>
       <h3>Label distribution</h3>
-      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">person</td><td class="num">152</td><td class="num">30.4%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">organization</td><td class="num">116</td><td class="num">23.2%</td><td class="bar"><span style="width:76.3%"></span></td></tr><tr><td class="label">date</td><td class="num">81</td><td class="num">16.2%</td><td class="bar"><span style="width:53.3%"></span></td></tr><tr><td class="label">number</td><td class="num">59</td><td class="num">11.8%</td><td class="bar"><span style="width:38.8%"></span></td></tr><tr><td class="label">model</td><td class="num">33</td><td class="num">6.6%</td><td class="bar"><span style="width:21.7%"></span></td></tr><tr><td class="label">location</td><td class="num">31</td><td class="num">6.2%</td><td class="bar"><span style="width:20.4%"></span></td></tr><tr><td class="label">method</td><td class="num">28</td><td class="num">5.6%</td><td class="bar"><span style="width:18.4%"></span></td></tr></tbody></table>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">person</td><td class="num">156</td><td class="num">31.2%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">organization</td><td class="num">117</td><td class="num">23.4%</td><td class="bar"><span style="width:75.0%"></span></td></tr><tr><td class="label">date</td><td class="num">77</td><td class="num">15.4%</td><td class="bar"><span style="width:49.4%"></span></td></tr><tr><td class="label">number</td><td class="num">58</td><td class="num">11.6%</td><td class="bar"><span style="width:37.2%"></span></td></tr><tr><td class="label">model</td><td class="num">33</td><td class="num">6.6%</td><td class="bar"><span style="width:21.2%"></span></td></tr><tr><td class="label">location</td><td class="num">31</td><td class="num">6.2%</td><td class="bar"><span style="width:19.9%"></span></td></tr><tr><td class="label">method</td><td class="num">28</td><td class="num">5.6%</td><td class="bar"><span style="width:17.9%"></span></td></tr></tbody></table>
     </section>
-    
+
 
     <section class="dataset" id="synthetic_news_100">
       <h2>synthetic_news_100</h2>
@@ -194,19 +193,19 @@
         <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
         <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
         <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc</span></div>
-        <div class="kpi"><span class="value">0.950</span><span class="name">Distinct-1 (mean)</span></div>
-        <div class="kpi"><span class="value">1.000</span><span class="name">Distinct-2 (mean)</span></div>
+        <div class="kpi"><span class="value">0.841</span><span class="name">Distinct-1 (mean)</span></div>
+        <div class="kpi"><span class="value">0.996</span><span class="name">Distinct-2 (mean)</span></div>
         <div class="kpi"><span class="value">100.0%</span><span class="name">Span match</span></div>
       </div>
-      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
+      <p class="meta"><strong>Engine:</strong> llm (100)</p>
       <p class="meta"><strong>Document types:</strong> news_article (100)</p>
       <h3>NLP quality metrics</h3>
 <table class="quality">
 <thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead><tbody>
-<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.950</td><td>min 0.920, max 0.962</td></tr>
-<tr><td>Distinct-2 (per doc, mean)</td><td class="num">1.000</td><td>min 1.000, max 1.000</td></tr>
-<tr><td>Distinct-1 (corpus)</td><td class="num">0.033</td><td>4,868 tokens</td></tr>
-<tr><td>Distinct-2 (corpus)</td><td class="num">0.137</td><td>unique bigrams / all bigrams</td></tr>
+<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.841</td><td>min 0.745, max 0.924</td></tr>
+<tr><td>Distinct-2 (per doc, mean)</td><td class="num">0.996</td><td>min 0.963, max 1.000</td></tr>
+<tr><td>Distinct-1 (corpus)</td><td class="num">0.208</td><td>8,418 tokens</td></tr>
+<tr><td>Distinct-2 (corpus)</td><td class="num">0.661</td><td>unique bigrams / all bigrams</td></tr>
 <tr><td>Span match rate</td><td class="num">100.0%</td><td>text[start:end] == entity.text</td></tr>
 <tr><td>Unique surface rate</td><td class="num">100.0%</td><td>each gold surface appears once in text</td></tr>
 <tr><td>Planned surface exactly-once</td><td class="num">100.0%</td><td>500/500 from synthetic_meta</td></tr>
@@ -215,37 +214,37 @@
       <h3>Label distribution</h3>
       <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">organization</td><td class="num">127</td><td class="num">25.4%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">person</td><td class="num">122</td><td class="num">24.4%</td><td class="bar"><span style="width:96.1%"></span></td></tr><tr><td class="label">location</td><td class="num">116</td><td class="num">23.2%</td><td class="bar"><span style="width:91.3%"></span></td></tr><tr><td class="label">date</td><td class="num">85</td><td class="num">17.0%</td><td class="bar"><span style="width:66.9%"></span></td></tr><tr><td class="label">number</td><td class="num">50</td><td class="num">10.0%</td><td class="bar"><span style="width:39.4%"></span></td></tr></tbody></table>
     </section>
-    
+
 
     <section class="dataset" id="synthetic_scientific_100">
       <h2>synthetic_scientific_100</h2>
       <p class="file"><code>datasets/synthetic_scientific_100.jsonl</code></p>
       <div class="kpis">
-        <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
-        <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
+        <div class="kpi"><span class="value">99</span><span class="name">Documents</span></div>
+        <div class="kpi"><span class="value">495</span><span class="name">Entities</span></div>
         <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc</span></div>
-        <div class="kpi"><span class="value">0.921</span><span class="name">Distinct-1 (mean)</span></div>
-        <div class="kpi"><span class="value">1.000</span><span class="name">Distinct-2 (mean)</span></div>
+        <div class="kpi"><span class="value">0.877</span><span class="name">Distinct-1 (mean)</span></div>
+        <div class="kpi"><span class="value">0.996</span><span class="name">Distinct-2 (mean)</span></div>
         <div class="kpi"><span class="value">100.0%</span><span class="name">Span match</span></div>
       </div>
-      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
-      <p class="meta"><strong>Document types:</strong> scientific_abstract (100)</p>
+      <p class="meta"><strong>Engine:</strong> llm (99)</p>
+      <p class="meta"><strong>Document types:</strong> scientific_abstract (99)</p>
       <h3>NLP quality metrics</h3>
 <table class="quality">
 <thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead><tbody>
-<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.921</td><td>min 0.850, max 0.972</td></tr>
-<tr><td>Distinct-2 (per doc, mean)</td><td class="num">1.000</td><td>min 1.000, max 1.000</td></tr>
-<tr><td>Distinct-1 (corpus)</td><td class="num">0.029</td><td>3,800 tokens</td></tr>
-<tr><td>Distinct-2 (corpus)</td><td class="num">0.132</td><td>unique bigrams / all bigrams</td></tr>
+<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.877</td><td>min 0.753, max 0.964</td></tr>
+<tr><td>Distinct-2 (per doc, mean)</td><td class="num">0.996</td><td>min 0.944, max 1.000</td></tr>
+<tr><td>Distinct-1 (corpus)</td><td class="num">0.129</td><td>6,932 tokens</td></tr>
+<tr><td>Distinct-2 (corpus)</td><td class="num">0.517</td><td>unique bigrams / all bigrams</td></tr>
 <tr><td>Span match rate</td><td class="num">100.0%</td><td>text[start:end] == entity.text</td></tr>
 <tr><td>Unique surface rate</td><td class="num">100.0%</td><td>each gold surface appears once in text</td></tr>
-<tr><td>Planned surface exactly-once</td><td class="num">100.0%</td><td>500/500 from synthetic_meta</td></tr>
+<tr><td>Planned surface exactly-once</td><td class="num">100.0%</td><td>495/495 from synthetic_meta</td></tr>
 </tbody></table>
 <p class="muted quality-note">Lexical diversity matches <code>ner-gold-generator</code> build statistics (report-only, not a gate). Higher distinct-1/2 usually means less repetitive wording.</p>
       <h3>Label distribution</h3>
-      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">model</td><td class="num">139</td><td class="num">27.8%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">metric</td><td class="num">112</td><td class="num">22.4%</td><td class="bar"><span style="width:80.6%"></span></td></tr><tr><td class="label">dataset</td><td class="num">100</td><td class="num">20.0%</td><td class="bar"><span style="width:71.9%"></span></td></tr><tr><td class="label">method</td><td class="num">79</td><td class="num">15.8%</td><td class="bar"><span style="width:56.8%"></span></td></tr><tr><td class="label">organization</td><td class="num">70</td><td class="num">14.0%</td><td class="bar"><span style="width:50.4%"></span></td></tr></tbody></table>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">model</td><td class="num">124</td><td class="num">25.1%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">metric</td><td class="num">121</td><td class="num">24.4%</td><td class="bar"><span style="width:97.6%"></span></td></tr><tr><td class="label">dataset</td><td class="num">105</td><td class="num">21.2%</td><td class="bar"><span style="width:84.7%"></span></td></tr><tr><td class="label">method</td><td class="num">73</td><td class="num">14.7%</td><td class="bar"><span style="width:58.9%"></span></td></tr><tr><td class="label">organization</td><td class="num">72</td><td class="num">14.5%</td><td class="bar"><span style="width:58.1%"></span></td></tr></tbody></table>
     </section>
-    
+
 
     <section class="dataset" id="synthetic_transcript_100">
       <h2>synthetic_transcript_100</h2>
@@ -254,30 +253,30 @@
         <div class="kpi"><span class="value">100</span><span class="name">Documents</span></div>
         <div class="kpi"><span class="value">500</span><span class="name">Entities</span></div>
         <div class="kpi"><span class="value">5.0</span><span class="name">Entities / doc</span></div>
-        <div class="kpi"><span class="value">0.841</span><span class="name">Distinct-1 (mean)</span></div>
-        <div class="kpi"><span class="value">1.000</span><span class="name">Distinct-2 (mean)</span></div>
+        <div class="kpi"><span class="value">0.727</span><span class="name">Distinct-1 (mean)</span></div>
+        <div class="kpi"><span class="value">0.983</span><span class="name">Distinct-2 (mean)</span></div>
         <div class="kpi"><span class="value">100.0%</span><span class="name">Span match</span></div>
       </div>
-      <p class="meta"><strong>Engine:</strong> procedural (100)</p>
+      <p class="meta"><strong>Engine:</strong> llm (100)</p>
       <p class="meta"><strong>Document types:</strong> transcript (100)</p>
       <h3>NLP quality metrics</h3>
 <table class="quality">
 <thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead><tbody>
-<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.841</td><td>min 0.814, max 0.852</td></tr>
-<tr><td>Distinct-2 (per doc, mean)</td><td class="num">1.000</td><td>min 1.000, max 1.000</td></tr>
-<tr><td>Distinct-1 (corpus)</td><td class="num">0.025</td><td>7,020 tokens</td></tr>
-<tr><td>Distinct-2 (corpus)</td><td class="num">0.085</td><td>unique bigrams / all bigrams</td></tr>
+<tr><td>Distinct-1 (per doc, mean)</td><td class="num">0.727</td><td>min 0.662, max 0.876</td></tr>
+<tr><td>Distinct-2 (per doc, mean)</td><td class="num">0.983</td><td>min 0.952, max 1.000</td></tr>
+<tr><td>Distinct-1 (corpus)</td><td class="num">0.122</td><td>18,345 tokens</td></tr>
+<tr><td>Distinct-2 (corpus)</td><td class="num">0.502</td><td>unique bigrams / all bigrams</td></tr>
 <tr><td>Span match rate</td><td class="num">100.0%</td><td>text[start:end] == entity.text</td></tr>
 <tr><td>Unique surface rate</td><td class="num">100.0%</td><td>each gold surface appears once in text</td></tr>
 <tr><td>Planned surface exactly-once</td><td class="num">100.0%</td><td>500/500 from synthetic_meta</td></tr>
 </tbody></table>
 <p class="muted quality-note">Lexical diversity matches <code>ner-gold-generator</code> build statistics (report-only, not a gate). Higher distinct-1/2 usually means less repetitive wording.</p>
       <h3>Label distribution</h3>
-      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">person</td><td class="num">210</td><td class="num">42.0%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">organization</td><td class="num">124</td><td class="num">24.8%</td><td class="bar"><span style="width:59.0%"></span></td></tr><tr><td class="label">number</td><td class="num">86</td><td class="num">17.2%</td><td class="bar"><span style="width:41.0%"></span></td></tr><tr><td class="label">date</td><td class="num">80</td><td class="num">16.0%</td><td class="bar"><span style="width:38.1%"></span></td></tr></tbody></table>
+      <table class="bars"><thead><tr><th>Label</th><th>Count</th><th>Share</th><th></th></tr></thead><tbody><tr><td class="label">person</td><td class="num">211</td><td class="num">42.2%</td><td class="bar"><span style="width:100.0%"></span></td></tr><tr><td class="label">organization</td><td class="num">121</td><td class="num">24.2%</td><td class="bar"><span style="width:57.3%"></span></td></tr><tr><td class="label">number</td><td class="num">86</td><td class="num">17.2%</td><td class="bar"><span style="width:40.8%"></span></td></tr><tr><td class="label">date</td><td class="num">82</td><td class="num">16.4%</td><td class="bar"><span style="width:38.9%"></span></td></tr></tbody></table>
     </section>
-    
+
     <footer>
-      Generated 2026-05-29 16:22 UTC by <code>scripts/build_stats_page.py</code>.
+      Generated 2026-06-08 07:52 UTC by <code>scripts/build_stats_page.py</code>.
       Machine-readable: <a href="stats.json">stats.json</a>.
       Repository: <a href="https://github.com/marfago-labs/ner-dataset">github.com/marfago-labs/ner-dataset</a>.
     </footer>
