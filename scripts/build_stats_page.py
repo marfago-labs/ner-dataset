@@ -251,23 +251,16 @@ def _render_label_table(labels: Counter[str]) -> str:
     if not total:
         return '<p class="muted">No entities.</p>'
     max_pct = max(100.0 * c / total for c in labels.values())
-    rows = [
-        _bar_row(label, count, total, max_pct)
-        for label, count in labels.most_common()
-    ]
+    rows = [_bar_row(label, count, total, max_pct) for label, count in labels.most_common()]
     return (
         '<table class="bars"><thead><tr><th>Label</th><th>Count</th>'
-        "<th>Share</th><th></th></tr></thead><tbody>"
-        + "".join(rows)
-        + "</tbody></table>"
+        "<th>Share</th><th></th></tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
     )
 
 
 def _render_quality_block(ds: DatasetStats) -> str:
-    parts: list[str] = ['<h3>NLP quality metrics</h3>', '<table class="quality">']
-    parts.append(
-        "<thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead><tbody>"
-    )
+    parts: list[str] = ["<h3>NLP quality metrics</h3>", '<table class="quality">']
+    parts.append("<thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead><tbody>")
     if ds.lexical:
         lx = ds.lexical
         d1 = lx.per_doc_distinct_1
@@ -327,7 +320,6 @@ def _render_quality_block(ds: DatasetStats) -> str:
 
 
 def _render_dataset_card(ds: DatasetStats) -> str:
-    tlen = ds.text_lengths
     engine = ", ".join(f"{k} ({v})" for k, v in ds.engines.most_common()) or "manual"
     doc_types = ", ".join(f"{k} ({v})" for k, v in ds.document_types.most_common()[:6])
     if len(ds.document_types) > 6:
@@ -365,28 +357,26 @@ def _render_summary_table(all_stats: list[DatasetStats]) -> str:
         d1 = ds.lexical.distinct_1_mean if ds.lexical else 0.0
         d2 = ds.lexical.distinct_2_mean if ds.lexical else 0.0
         rows.append(
-            f"<tr><td><a href=\"#{ds.slug}\">{ds.slug}</a></td>"
-            f"<td class=\"num\">{_fmt_int(ds.documents)}</td>"
-            f"<td class=\"num\">{_fmt_int(ds.entities)}</td>"
-            f"<td class=\"num\">{_fmt_float(ds.avg_entities)}</td>"
-            f"<td class=\"num\">{d1:.3f}</td>"
-            f"<td class=\"num\">{d2:.3f}</td>"
-            f"<td class=\"num\">{_fmt_pct(ds.integrity.span_match_rate if ds.integrity else 1.0)}</td>"
-            f"<td class=\"num\">{len(ds.labels)}</td></tr>"
+            f'<tr><td><a href="#{ds.slug}">{ds.slug}</a></td>'
+            f'<td class="num">{_fmt_int(ds.documents)}</td>'
+            f'<td class="num">{_fmt_int(ds.entities)}</td>'
+            f'<td class="num">{_fmt_float(ds.avg_entities)}</td>'
+            f'<td class="num">{d1:.3f}</td>'
+            f'<td class="num">{d2:.3f}</td>'
+            f'<td class="num">{_fmt_pct(ds.integrity.span_match_rate if ds.integrity else 1.0)}</td>'
+            f'<td class="num">{len(ds.labels)}</td></tr>'
         )
     rows.append(
         f'<tr class="total"><td><strong>Total</strong></td>'
         f'<td class="num"><strong>{_fmt_int(total_docs)}</strong></td>'
         f'<td class="num"><strong>{_fmt_int(total_ents)}</strong></td>'
-        f"<td colspan=\"5\"></td></tr>"
+        f'<td colspan="5"></td></tr>'
     )
     return (
         '<table class="summary"><thead><tr>'
         "<th>Dataset</th><th>Docs</th><th>Entities</th><th>Ent/doc</th>"
         "<th>Distinct-1</th><th>Distinct-2</th><th>Span match</th><th>Labels</th>"
-        "</tr></thead><tbody>"
-        + "".join(rows)
-        + "</tbody></table>"
+        "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
     )
 
 
@@ -457,9 +447,7 @@ def _stats_to_json(all_stats: list[DatasetStats]) -> dict:
 def build_html(all_stats: list[DatasetStats]) -> str:
     generated = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
     cards = "\n".join(_render_dataset_card(ds) for ds in all_stats)
-    nav = "\n".join(
-        f'<a href="#{ds.slug}">{ds.slug}</a> ({ds.documents})' for ds in all_stats
-    )
+    nav = "\n".join(f'<a href="#{ds.slug}">{ds.slug}</a> ({ds.documents})' for ds in all_stats)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,0 +1,36 @@
+[project]
+name = "ner-dataset"
+version = "1.0.0"
+description = "NER benchmark gold JSONL datasets for marfago-labs"
+readme = "README.md"
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = [
+    "ner-detector",
+    "ruff>=0.9.0",
+    "mypy>=1.14.0",
+    "pre-commit>=4.0.0",
+]
+
+[tool.uv.sources]
+ner-detector = { path = "../ner-detector", editable = true }
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.12"
+files = ["scripts"]
+warn_unused_configs = true
+check_untyped_defs = true
+ignore_missing_imports = true

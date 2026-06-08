@@ -1,5 +1,8 @@
-# pip install pre-commit && pre-commit install
+# uv sync --extra dev && uv run pre-commit install
 # Run all: pre-commit run --all-files
+
+default_language_version:
+  python: python3.12
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -11,7 +14,31 @@ repos:
       - id: check-added-large-files
         args: [--maxkb=5120]
 
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.10
+    hooks:
+      - id: ruff
+        args: [--fix]
+        files: ^scripts/
+      - id: ruff-format
+        files: ^scripts/
+
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.24.2
     hooks:
       - id: gitleaks
+
+  - repo: local
+    hooks:
+      - id: validate-datasets
+        name: validate gold JSONL
+        entry: uv run python scripts/validate_datasets.py
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: mypy-scripts
+        name: mypy (scripts)
+        entry: uv run mypy scripts
+        language: system
+        pass_filenames: false
+        always_run: true

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T07:52:03.481064+00:00",
+  "generated_at": "2026-06-08T22:30:45.710562+00:00",
   "metrics_note": "Lexical diversity (distinct-1/2) matches ner-gold-generator build-gold stderr statistics. Gold integrity checks span anchoring on committed JSONL.",
   "datasets": [
     {
