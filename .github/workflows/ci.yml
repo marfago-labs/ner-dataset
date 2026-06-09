@@ -17,6 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # pyproject.toml: ner-detector = { path = "../ner-detector" } (sibling of repo root)
+      - name: Checkout ner-detector
+        run: |
+          git clone --depth 1 --branch master \
+            "https://github.com/marfago-labs/ner-detector.git" \
+            ../ner-detector
+
       - uses: astral-sh/setup-uv@v8.1.0
         with:
           enable-cache: true
@@ -36,6 +43,12 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Checkout ner-detector
+        run: |
+          git clone --depth 1 --branch master \
+            "https://github.com/marfago-labs/ner-detector.git" \
+            ../ner-detector
+
       - uses: astral-sh/setup-uv@v8.1.0
         with:
           enable-cache: true
@@ -53,6 +66,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+
+      - name: Checkout ner-detector
+        run: |
+          git clone --depth 1 --branch master \
+            "https://github.com/marfago-labs/ner-detector.git" \
+            ../ner-detector
 
       - uses: astral-sh/setup-uv@v8.1.0
         with:
